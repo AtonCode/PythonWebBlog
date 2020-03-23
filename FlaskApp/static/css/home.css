@@ -76,6 +76,17 @@ width: 100%;
 max-width: 800px /*this can be anything you wish, to show, as default size*/
 }
 
+@media (max-width: 640px){
+iframe{
+height: 360px /*whatever you need, to make the scrollbar hide on testing, and the content of the iframe reveal (on mobile/phone or other target devices) */
+}
+}
+@media (max-width: 560px){
+iframe{
+height: 315px /*and so on until and as needed */
+}
+}
+
 #Video
 {
     padding: 10px;
