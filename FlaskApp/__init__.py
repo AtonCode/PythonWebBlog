@@ -38,6 +38,7 @@ def show_user_profile(username):
     # show the user profile for that user
     return 'User %s' % escape(username)
 
+
 # Upload Files
 def allowed_file(filename):
     return '.' in filename and \
