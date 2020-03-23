@@ -89,6 +89,7 @@ height: 315px /*and so on until and as needed */
 
 #Video
 {
-    padding: 10px;
+    padding-left: 0px;
+    padding-right: 10px;
     width: auto;
 }
