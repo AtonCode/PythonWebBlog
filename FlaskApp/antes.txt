@@ -1,0 +1,47 @@
+from flask import Flask
+from flask import render_template
+app = Flask(__name__)
+
+
+#Constans
+footer = "2020 Create by "
+
+
+@app.route('/')
+def index():
+    text = { 'content': 'Welcome to Aton Code' } 
+    Titleparagraf ={'content': 'This website is for coders'}
+    f = open ('./txt/hometxt/me.txt','r')
+    txt = f.read()  
+    paragrafOne= {'content': txt}
+    f.close()
+    return render_template("index.html", paragrafOne= paragrafOne, title = '| The Aton Code Blog',text = text,  Titleparagraf=Titleparagraf, footer=footer)
+
+@app.route('/x')
+def x():
+    text = { 'content': 'Hi i am AtonCode !' } 
+    paragraf ={'content':'I have 20 years old'}
+    return render_template("x.html", title = '| Aton Code X',text = text, paragraf= paragraf,footer=footer )
+
+@app.route('/nasa')
+def nasa():
+    text = { 'content': 'NASA {APIs}!' } 
+    paragraf ={'content':'I have 20 years old'}
+    return render_template("nasa.html", title = '| NASA {APIs}',text = text, paragraf= paragraf,footer=footer )
+
+@app.route('/vali')
+def vali():
+    text = { 'content': 'The Vali Blog!' } 
+    Titleparagraf ={'content': 'For Vali'}
+    f = open ('./txt/valitxt/vali.txt','r')
+    txt = f.read()  
+    paragrafOne= {'content': txt}
+    f.close()
+    return render_template("vali.html", paragrafOne= paragrafOne,title = '| The Vali Blog',text = text,  Titleparagraf=Titleparagraf, footer=footer)
+
+    
+
+
+app.debug = True
+if __name__ == "__main__":
+    app.run()
