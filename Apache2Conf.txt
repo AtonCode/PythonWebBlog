@@ -1,0 +1,34 @@
+<VirtualHost *:80>
+
+                ServerName  py.aslbank.com
+                ServerAlias py.aslbank.com
+                ServerAdmin akenaton693@gmail.com
+         
+                #WSGIDaemonProcess FlaskApp user=user1 group=group1 threads=5
+                WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
+
+                <Directory /var/www/FlaskApp/FlaskApp/>
+                        WSGIScriptReloading On
+                #       WSGIProcessGroup flaskApp
+                #       WSGIApplicationGroup %{GLOBAL}
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+
+                Alias /static /var/www/FlaskApp/FlaskApp/static
+                <Directory /var/www/FlaskApp/FlaskApp/static/>
+                        WSGIScriptReloading On
+                #       WSGIProcessGroup flaskApp
+                #       WSGIApplicationGroup %{GLOBAL}
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                LogLevel warn
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+                RewriteEngine on
+                RewriteCond %{SERVER_NAME} =py.aslbank.com
+                RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+</VirtualHost>
