@@ -70,3 +70,9 @@ a
     background-color: rgb(5, 113, 175);
     color: white;
 }
+
+#Video
+{
+   width: auto;
+   height: auto; 
+}
