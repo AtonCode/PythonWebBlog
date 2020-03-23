@@ -8,6 +8,15 @@ app = Flask(__name__)
 
 
 
+# Rutas Erros 404
+@app.errorhandler(404)
+def page_not_found(error):
+    titlePage = '| Page Not Found 404'
+    return render_template('page_not_found.html', titlePage= titlePage), 404
+# Fin Rutas Erros 404
+
+
+# Rutas index
 @app.route('/')
 def index():
     text = { 'content': 'Welcome to Aton Code' }  
@@ -15,7 +24,8 @@ def index():
     paragrafOne= {'content': ' '}
    
     return render_template("index.html", paragrafOne= paragrafOne, title = '| The Aton Code Blog',text = text,  Titleparagraf=Titleparagraf)
+# Fin Rutas index
 
-    
+ 
 if __name__ == "__main__":
     app.run()
