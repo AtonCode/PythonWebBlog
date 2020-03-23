@@ -1,10 +1,11 @@
+"""
 import os
-from flask import Flask ,redirect, url_for, flash
-from flask import render_template
 from markupsafe import escape
-from flask import request
 from werkzeug.utils import secure_filename
-from flask import send_from_directory
+"""
+from flask import Flask ,render_template, redirect, url_for, flash, request, send_from_directory
+
+
 
 
 UPLOAD_FOLDER = './UPLOAD_FOLDER'
@@ -15,30 +16,28 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 #Erros 404
-
 @app.errorhandler(404)
 def page_not_found(error):
     titlePage = '| Page Not Found 404'
     return render_template('page_not_found.html', titlePage= titlePage), 404
 
+#Index Page
 @app.route('/')
 def index():
-    username = request.cookies.get('username')
-    
-    print(username)
+
     titlePage = '| The Aton Code Blog'
     text = { 'content': 'Welcome to Aton Code' }  
     Titleparagraf ={'content': 'The WarGames Movie'}
     paragrafOne= {'content': 'Movie in Sapnish'}
    
     return render_template("index.html", paragrafOne= paragrafOne, titlePage=titlePage,text = text,  Titleparagraf=Titleparagraf)
-
+"""
 @app.route('/user/<username>')
 def show_user_profile(username):
     # show the user profile for that user
     return 'User %s' % escape(username)
 
-'''
+
 # Upload Files
 def allowed_file(filename):
     return '.' in filename and \
@@ -77,7 +76,7 @@ def uploaded_file(filename):
                                filename)
 
 #··End UploadFile
-'''
+"""
 
 
 
