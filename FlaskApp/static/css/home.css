@@ -75,3 +75,9 @@ iframe{
 width: 100%;
 max-width: 800px /*this can be anything you wish, to show, as default size*/
 }
+
+#Video
+{
+    padding: 10px;
+    width: auto;
+}
