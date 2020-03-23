@@ -1,19 +1,19 @@
-"""
+
 import os
 from markupsafe import escape
 from werkzeug.utils import secure_filename
-"""
+
 from flask import Flask ,render_template, redirect, url_for, flash, request, send_from_directory
-"""
+
 UPLOAD_FOLDER = './UPLOAD_FOLDER'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3', 'mp4'}
-"""
+
 app = Flask(__name__)
 
-"""
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-"""
+
 
 #Erros 404
 @app.errorhandler(404)
@@ -31,7 +31,7 @@ def index():
     paragrafOne= {'content': 'Movie in Sapnish'}
    
     return render_template("index.html", paragrafOne= paragrafOne, titlePage=titlePage,text = text,  Titleparagraf=Titleparagraf)
-"""
+
 @app.route('/user/<username>')
 def show_user_profile(username):
     # show the user profile for that user
@@ -76,7 +76,7 @@ def uploaded_file(filename):
                                filename)
 
 #··End UploadFile
-"""
+
 
 
 
