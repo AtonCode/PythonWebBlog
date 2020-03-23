@@ -71,8 +71,7 @@ a
     color: white;
 }
 
-#Video
-{
-   width: auto;
-   height: auto; 
+iframe{
+width: 100%;
+max-width: 800px /*this can be anything you wish, to show, as default size*/
 }
