@@ -38,7 +38,7 @@ def show_user_profile(username):
     # show the user profile for that user
     return 'User %s' % escape(username)
 
-
+'''
 # Upload Files
 def allowed_file(filename):
     return '.' in filename and \
@@ -77,11 +77,11 @@ def uploaded_file(filename):
                                filename)
 
 #··End UploadFile
-
+'''
 
 
 
 #--------------------------#
-app.debug = True 
+#app.debug = True 
 if __name__ == "__main__":
     app.run()
