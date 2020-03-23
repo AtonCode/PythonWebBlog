@@ -26,6 +26,14 @@ def index():
     return render_template("index.html", paragrafOne= paragrafOne, title = '| The Aton Code Blog',text = text,  Titleparagraf=Titleparagraf)
 # Fin Rutas index
 
+
+# Ruta Interactiva
+@app.route('/user/<username>')
+def show_user_profile(username):
+    # show the user profile for that user
+    return 'User %s' % escape(username)
+# Fin Ruta Interactiva
  
+
 if __name__ == "__main__":
     app.run()
