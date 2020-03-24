@@ -26,12 +26,27 @@ def page_not_found(error):
 # Rutas index
 @app.route('/')
 def index():
+    
     titlePage = '| The Aton Code Blog'
     text = { 'content': 'Welcome to Aton Code' }  
-    Titleparagraf ={'content': 'This website is for coders'}
-    paragrafOne= {'content': ' '}
+    Titleparagraf ={'content': 'The WarGames Movie'}
+    paragrafOne= {'content': 'Movie in Spanish'}
+
+    Titleparagraf2= {'content': 'The BrainStrom Movie'} 
+    paragraf2= {'content': 'Movie in Spanish'}
    
-    return render_template("index.html",titlePage= titlePage, paragrafOne= paragrafOne ,text = text,  Titleparagraf=Titleparagraf)
+    return render_template(
+
+        "index.html",
+        titlePage= titlePage, 
+        paragrafOne= paragrafOne,
+        text = text,
+        Titleparagraf=Titleparagraf,
+        Titleparagraf2=Titleparagraf2,
+        paragraf2=paragraf2
+        
+        )
+    
 # Fin Rutas index
 
 
