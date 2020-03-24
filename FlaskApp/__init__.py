@@ -54,6 +54,7 @@ def index():
 @app.route('/user/<username>')
 def show_user_profile(username):
     # show the user profile for that user
+    print(username)
     return 'User %s' % escape(username)
 # Fin Ruta Interactiva
  
