@@ -1,5 +1,5 @@
 import os
-from markupsafe import escape
+from markupsafe import Markup, escape
 from werkzeug.utils import secure_filename
 from flask import Flask ,render_template, redirect, url_for, flash, request, send_from_directory
 
@@ -26,7 +26,7 @@ def page_not_found(error):
 # Rutas index
 @app.route('/')
 def index():
-    
+
     titlePage = '| The Aton Code Blog'
     text = { 'content': 'Welcome to Aton Code' }  
     Titleparagraf ={'content': 'The WarGames Movie'}
