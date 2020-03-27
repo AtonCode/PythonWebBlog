@@ -1,12 +1,13 @@
 from flask import Flask
 from flask import render_template
+
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
 
-    title ={'content': '| The Aton Code Blog'} 
+    titlePage ={'content': '| The Aton Code Blog'} 
     text = { 'content': 'Welcome to Sacristan. Alejandro Blog' }  
     Titleparagraf ={'content': 'Recomendates Blogs'}
     paragrafOne= {'content': ' '}
@@ -15,7 +16,7 @@ def index():
 
         "index.html", 
         paragrafOne= paragrafOne, 
-        title = title,
+        titlePage = titlePage,
         text = text,
         Titleparagraf=Titleparagraf
         
@@ -36,7 +37,8 @@ def about():
         titlePage= titlePage, 
         paragrafOne= paragrafOne,
         text = text,
-        Titleparagraf=Titleparagraf,
+        Titleparagraf=Titleparagraf
+        
        
         )
     
@@ -58,7 +60,7 @@ def hobbies():
         titlePage= titlePage, 
         paragrafOne= paragrafOne,
         text = text,
-        Titleparagraf=Titleparagraf,
+        Titleparagraf=Titleparagraf
        
         )
     
@@ -80,7 +82,7 @@ def Apps():
         titlePage= titlePage, 
         paragrafOne= paragrafOne,
         text = text,
-        Titleparagraf=Titleparagraf,
+        Titleparagraf=Titleparagraf
        
         )
     
