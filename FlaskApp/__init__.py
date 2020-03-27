@@ -1,6 +1,4 @@
 import os
-from markupsafe import Markup, escape
-from werkzeug.utils import secure_filename
 from flask import Flask ,render_template, redirect, url_for, flash, request, send_from_directory
 
 app = Flask(__name__)
@@ -113,13 +111,6 @@ def Apps():
 # Fin Rutas Apps
 
 
-# Ruta Interactiva
-@app.route('/user/<username>')
-def show_user_profile(username):
-    # show the user profile for that user
-    print(username)
-    return 'User %s' % escape(username)
-# Fin Ruta Interactiva
  
 
 if __name__ == "__main__":
