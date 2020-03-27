@@ -29,7 +29,7 @@ def page_not_found(error):
 @app.route('/')
 def index():
 
-    titlePage = '| The Sacristán. Alejandro Blog'
+    titlePage = '| The Sacristan. Alejandro Blog'
     text = { 'content': 'Welcome to Sacristán. Alejandro Blog' }  
     Titleparagraf ={'content': 'Recomdeate Blogs'}
     paragrafOne= {'content': 'Blogs Score'}
