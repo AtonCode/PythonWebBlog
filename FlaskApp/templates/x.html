@@ -6,50 +6,67 @@
   <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="../static/css/home.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/site.css">
   <link rel="shortcut icon" href="https://www.raspberrypi.org/homepage-9df4b/favicon.png">
   <title>{{TitlePage}}</title>
 </head>
 
 <body>
 
-  <div id="Container">
+  <header class="header">
 
-    <div id="TitleHed">
-      <h1>{{MainTitle.content}}!</h1>
+    <div class="container logo-nav-container">
 
+      <a href="https://py.aslbank.com/" class="Logo">Logo</a>
+      <nav class="navigation">
+        <ul>
+          <li><a href="https://py.aslbank.com/about">About</a></li>
+          <li><a href="https://py.aslbank.com/hobbies">Hobbies</a></li>
+          <li><a href="https://py.aslbank.com/apps">Aplications</a></li>
+        </ul>
+      </nav>
     </div>
-    <!----End The TitleHead-->
 
-    <div id="Main">
+  </header>
 
-      <div id="Video">
+  <main class="main">
 
-        <h1>{{Titleparagraf.content}}</h1>
-        <p>{{ParagrafOne.content}}</p>
+    <div class="container">
 
-
+      <div class="MainTitle">
+        <h1>{{MainTitle.content}}!</h1>
       </div>
 
-    </div>
-    <!----End The MainTextBody-->
+      <div class="Paragraph">
+        <h2>{{Titleparagraf.content}}</h2>
+        <p>{{ParagrafOne.content}}</p>
+      </div>
 
-    <div id="Footer">
-      <p id="CC">
+
+    </div>
+    <!----End The Container-->
+
+  </main>
+  <!----End The MainTextBody-->
+
+  <!----The Footer--->
+  <div class="footer">
+
+    <div>
+
+      <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia de Creative Commons"
-            style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Este obra está
-        bajo una
-        <a rel="license" href="https://i.creativecommons.org/l/by/4.0/88x31.png">licencia de Creative Commons
-          Reconocimiento-NoComercial 4.0 Internacional</a>
+            style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
       </p>
       <p>
-        {{footer}}<a id="by" href="https://www.aslbank.com" target="_blank">ASL Bank.com</a></a>
+        <a>Create by </a> <a class="by" href="https://www.aslbank.com">aslbank.com</a>
       </p>
+
     </div>
-    <!----End The Footer-->
 
   </div>
-  <!----End The Container-->
+  <!----End The Footer-->
+
 
 </body>
 
