@@ -7,10 +7,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    titlePage ='| The Sacristan. Alejandro Blog'
-    text = { 'content': 'Welcome to Sacristan. Alejandro Blog' }  
-    Titleparagraf ={'content': 'Recomendates Blogs'}
-    paragrafOne= {'content': ' '}
+    titlePage ='| The Sacristán. Alejandro Blog'
+    text = { 'content': 'Welcome to Sacristán. Alejandro Blog' }  
+    Titleparagraf ={'content': 'Recommended blogs'}
+    paragrafOne= {'content': 'Blogs '}
    
     return render_template(
 
@@ -28,7 +28,7 @@ def about():
 
     titlePage = '| About'
     text = { 'content': 'About' }  
-    Titleparagraf ={'content': 'Me'}
+    Titleparagraf ={'content': 'Who I am'}
     paragrafOne= {'content': 'I am'}
    
     return render_template(
@@ -73,7 +73,7 @@ def Apps():
 
     titlePage = '| Apps'
     text = { 'content': 'Apps' }  
-    Titleparagraf ={'content': 'Recomendate Apps'}
+    Titleparagraf ={'content': 'Recommended Apps'}
     paragrafOne= {'content': 'Apps'}
    
     return render_template(
