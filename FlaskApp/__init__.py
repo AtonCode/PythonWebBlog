@@ -115,6 +115,6 @@ def Apps():
 # Fin Rutas Apps
 
  
- 
+ app.debug= True
 if __name__ == "__main__":
     app.run()
