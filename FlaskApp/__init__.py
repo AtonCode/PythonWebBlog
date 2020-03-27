@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    titlePage ='| The Sacristán. Alejandro Blog'
-    text = { 'content': 'Welcome to Sacristán. Alejandro Blog' }  
+    titlePage ='| The Sacristan. Alejandro Blog'
+    text = { 'content': 'Welcome to Sacristan. Alejandro Blog' }  
     Titleparagraf ={'content': 'Recommended blogs'}
     paragrafOne= {'content': 'Blogs '}
    
