@@ -10,8 +10,21 @@ app = Flask(__name__)
 # Rutas Erros 404
 @app.errorhandler(404)
 def page_not_found(error):
+
     titlePage = '| Page Not Found 404'
-    return render_template('page_not_found.html', titlePage= titlePage), 404
+    text = { 'content': 'Ups! This Page Not Found 404' }  
+    Titleparagraf ={'content': 'Return to main page'}
+    paragrafOne= {'content': 'Good Search'}
+
+    return render_template(
+        
+        'page_not_found.html',
+         titlePage= titlePage,
+         paragrafOne= paragrafOne,
+         text = text,
+         Titleparagraf=Titleparagraf,
+    
+    ), 404
 # Fin Rutas Erros 404
 
 
