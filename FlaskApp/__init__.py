@@ -44,7 +44,7 @@ def index():
         Titleparagraf=Titleparagraf,
         ParagrafOne= ParagrafOne
         
-        )
+    )
 
 # Fin Rutas Index
 
@@ -66,7 +66,7 @@ def about():
         Titleparagraf=Titleparagraf,
         ParagrafOne= ParagrafOne
                
-        )
+    )
 
 # Fin Rutas About
 
@@ -88,7 +88,7 @@ def hobbies():
         Titleparagraf=Titleparagraf,
         ParagrafOne= ParagrafOne
        
-        )
+    )
     
 # Fin Rutas Hobbies
 
@@ -110,7 +110,7 @@ def Apps():
         Titleparagraf=Titleparagraf,
         ParagrafOne= ParagrafOne
        
-        )
+    )
     
 # Fin Rutas Apps
 
