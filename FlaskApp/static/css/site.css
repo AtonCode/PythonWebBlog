@@ -1,11 +1,11 @@
 body {
     background-color: rgb(30, 30, 30);
     font:small sans-serif; 
-    
     color: white;
     font-size: 1.2em;
     line-height: 1.4em;
-    margin: 0;
+    margin: auto;
+    max-width: 750px;
     padding:50px ;
 }
 
@@ -22,10 +22,9 @@ p
 
 .container
 {
-    width: 85%;
+    width:auto;
     max-width: 85%;
     margin: 0 auto;
-
 }
 
 .header
@@ -51,6 +50,7 @@ p
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .Logo
@@ -58,8 +58,13 @@ p
     letter-spacing:5px ; 
     font-size:1.4em ; 
 }
+.menu-icon
+{
+    display: none;
+    cursor: pointer;
+}
 
-.navigation ul
+ .navigation ul
 {
     margin: 0;
     padding: 0;
@@ -93,6 +98,7 @@ p
 }
 .MainTitle
 {
+    margin: auto;
     background-color: rgb(60,60,60);
     padding: 20px;
     border-radius: 5px;
@@ -120,4 +126,47 @@ p
 {
     color: white;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 767px)
+{
+.menu-icon
+{
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+ .navigation
+{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+    .navigation ul
+    {
+        display: none;
+    }
+
+    .navigation ul.show
+    {
+        display: block;
+    }
+
+    .navigation ul li
+    {
+        display: block;
+    }
+
+        .navigation ul li a 
+        {
+            display: block;
+            padding: 0.5rem 0;
+            transition: all 0.3s linear;
+            border-radius: 5px;
+        }
+
+            .navigation ul li a :hover
+            {
+                background-color: rgb(68, 68, 68);
+            }
 }
