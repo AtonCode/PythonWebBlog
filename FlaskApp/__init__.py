@@ -1,8 +1,7 @@
 from flask import Flask
 from flask import render_template
 
-app = Flask(__name__)
-
+app = Flask(__name__)s
 
 
 # Rutas Erros 404
@@ -78,7 +77,7 @@ def hobbies():
    
     return render_template(
 
-        "about.html",
+        "hobbies.html",
         titlePage= titlePage, 
         paragrafOne= paragrafOne,
         text = text,
@@ -100,7 +99,7 @@ def Apps():
    
     return render_template(
 
-        "about.html",
+        "apps.html",
         titlePage= titlePage, 
         paragrafOne= paragrafOne,
         text = text,
@@ -110,8 +109,6 @@ def Apps():
     
 # Fin Rutas Apps
 
-
- 
 
 if __name__ == "__main__":
     app.run()
