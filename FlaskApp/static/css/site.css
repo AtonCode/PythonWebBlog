@@ -5,8 +5,8 @@ body {
     font-size: 1.2em;
     line-height: 1.4em;
     margin: auto;
-    max-width: 750px;
-    padding:50px ;
+    max-width: 95%;
+    padding-top:50px ;
 }
 
 h1
@@ -23,7 +23,7 @@ p
 .container
 {
     width:auto;
-    max-width: 85%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -91,6 +91,7 @@ p
 
 .main
 {
+    width: auto;
     padding-top: 6rem;
     background-color: rgb(40, 40, 40);
     border-radius: 5px;
