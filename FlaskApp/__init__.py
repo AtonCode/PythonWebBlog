@@ -5,11 +5,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    text = { 'content': 'Welcome to Aton Code' }  
+    text = { 'content': 'Welcome to Sacristan. Alejandro Blog' }  
     Titleparagraf ={'content': 'This website is for coders'}
     paragrafOne= {'content': ' '}
    
-    return render_template("index.html", paragrafOne= paragrafOne, title = '| The Aton Code Blog',text = text,  Titleparagraf=Titleparagraf)
+    return render_template(
+
+        "index.html", 
+        paragrafOne= paragrafOne, 
+        title = '| The Aton Code Blog',
+        text = text,
+        Titleparagraf=Titleparagraf
+        
+        )
 
  
     
