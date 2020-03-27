@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 
-app = Flask(__name__)s
+app = Flask(__name__)
 
 
 # Rutas Erros 404
