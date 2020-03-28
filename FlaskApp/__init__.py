@@ -113,6 +113,27 @@ def Apps():
     
 # Fin Rutas Apps
 
+# Rutas Tools
+@app.route('/tools')
+def Tools():
+
+    TitlePage = '| Tools'
+    MainTitle = { 'content': 'Tools' }  
+    Titleparagraf ={'content': 'Visual Studio Code'}
+    ParagrafOne= {'content': 'Visual Studio Code is a...'}
+   
+    return render_template(
+
+        "apps.html",
+        TitlePage= TitlePage,
+        MainTitle= MainTitle ,
+        Titleparagraf=Titleparagraf,
+        ParagrafOne= ParagrafOne
+       
+    )
+    
+# Fin Rutas Tools
+
  
  #app.debug= True
 if __name__ == "__main__":
