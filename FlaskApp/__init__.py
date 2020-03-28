@@ -77,8 +77,8 @@ def hobbies():
 
     TitlePage = '| Hobbies'
     MainTitle = { 'content': 'Hobbies' }  
-    Titleparagraf ={'content': 'My Hobbies'}
-    ParagrafOne= {'content': 'I am'}
+    Titleparagraf ={'content': 'Watch Academic Movies'}
+    ParagrafOne= {'content': '2020'}
    
     return render_template(
 
