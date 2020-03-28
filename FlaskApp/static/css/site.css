@@ -20,6 +20,12 @@ p
     margin-bottom: 1.0em;
 }
 
+a
+{
+    text-decoration: none;
+    color: rgb(0, 97,146);
+}
+
 .container
 {
     width:90%;

@@ -1,6 +1,7 @@
 # Libreias
 from flask import Flask
 from flask import render_template
+from jinja2 import Template 
 
 # Constantes Globales 
 app = Flask(__name__)
@@ -56,7 +57,7 @@ def about():
     TitlePage = '| About'
     MainTitle = { 'content': 'About' }  
     Titleparagraf ={'content': 'Who I am'}
-    ParagrafOne= {'content': 'I am'}
+    ParagrafOne= {'content': 'Hola a todos,'}
    
     return render_template(
 
@@ -120,11 +121,13 @@ def Tools():
     TitlePage = '| Tools'
     MainTitle = { 'content': 'Tools' }  
     Titleparagraf ={'content': 'Visual Studio Code'}
-    ParagrafOne= {'content': 'Visual Studio Code is a...'}
+    ParagrafOne= {
+        'content': 'Editor de textos'
+        }
    
     return render_template(
 
-        "apps.html",
+        "tools.html",
         TitlePage= TitlePage,
         MainTitle= MainTitle ,
         Titleparagraf=Titleparagraf,

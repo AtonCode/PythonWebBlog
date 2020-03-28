@@ -1,79 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="../static/css/site.css">
-  <link rel="shortcut icon" href="https://www.raspberrypi.org/homepage-9df4b/favicon.png">
+{% block content %}
+<div class="Paragraph">
+  <h2>{{Titleparagraf.content}}</h2>
+  <p>{{ParagrafOne.content}}</p>
+  <p>
 
-  <title>{{TitlePage}}</title>
-</head>
+    Nací es Villavicencio Meta me crié con mi madre y mi abuela. Viví por un tiempo en la ciudad y luego me mudé al campo
+    con mi familia donde construimos un conjunto familiar de cinco casas. Allí crecí la mayor parte de mi vida entre el
+    campo e internet.
 
-<body>
+</p>
+<p>
+  
+  Aprendí mucho sobre la ganadería y agricultura en el día y en la noche mucho sobre el entorno internacional y la
+  informática, con el paso del tiempo este tomo más fuerza en mí y llego a ocupar más tiempo en mi vida. Tuve muchos
+  problemas por qué el campo requiere mucho trabajo y yo no quería hacerlo, quería leer.
 
-  <header class="header">
+</p>
+<p>
 
-    <div class="container logo-nav-container">
+  Tuve problemas en el colegio por qué no daba todo de mí para realizar los trabajos ya que estaba ocupado, pero por fin
+  llegue a la universidad dónde lo único que hago es lo que siempre he hecho y ahora la diferencia es que me califican.
+  Espero poder ayudar al mundo con todo lo que he aprendido, aveces siento afán por mis proyectos personales pero luego
+  entiendo que es un proceso y me calmo.
 
-      <a href="https://py.aslbank.com/" class="Logo"><img class="raspberrypi" style="border-width:0" width="50px"
-          height="50px" src="https://www.raspberrypi.org/homepage-9df4b/favicon.png" /></a>
-      <span class="menu-icon">Menu</span>
-      <nav class="navigation">
-        <ul>
-          <li><a href="https://py.aslbank.com/about">About</a></li>
-          <li><a href="https://py.aslbank.com/tools">Tools</a></li>
-          <li><a href="https://py.aslbank.com/hobbies">Hobbies</a></li>
-          <li><a href="https://py.aslbank.com/apps">Aplications</a></li>
-        </ul>
-      </nav>
-    </div>
+</p>
+<p>
 
-  </header>
+  Me gusta la tecnología las empresas y el campo.
 
-  <main class="main">
+</p>
+<p>
 
-    <div class="container">
+  Eso soy yo. 
 
-      <div class="MainTitle">
-        <h1>{{MainTitle.content}}!</h1>
-      </div>
+</p>
 
-      <div class="Paragraph">
-        <h2>{{Titleparagraf.content}}</h2>
-        <p>{{ParagrafOne.content}}</p>
-      </div>
+</div>
 
+<div class="Paragraph">
 
-    </div>
-    <!----End The Container-->
+  <p>
+  <h2>Contact Me</h2>
+  <p>Name: Alejandro</p>
+  <p>Email: alejandro-sacristan@javeriana.edu.co</p>
+  </p>
 
-  </main>
-  <!----End The MainTextBody-->
+</div>
 
-  <!----The Footer--->
-  <div class="footer">
-
-    <div>
-
-      <p>
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia de Creative Commons"
-            style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
-      </p>
-      <p>
-        <a>Create by </a> <a class="by" href="https://www.aslbank.com">aslbank.com</a>
-      </p>
-
-    </div>
-
-  </div>
-  <!----End The Footer-->
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="../static/js/index.js"></script>
-
-</body>
-
-</html>
+{% endblock %}
