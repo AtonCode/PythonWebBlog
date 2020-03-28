@@ -70,7 +70,6 @@ def about():
 
 # Fin Rutas About
 
-
 # Rutas Hobbies
 @app.route('/hobbies')
 def hobbies():
