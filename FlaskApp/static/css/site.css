@@ -29,8 +29,8 @@ p
 
 .header
 {
-    max-height: 45px;
-    background-color: rgb(0, 114, 180);
+    
+    background-color: rgba(2, 162, 255, 0.397);
     color: white;
     padding: 2rem 0;
     position: fixed;
@@ -52,6 +52,7 @@ p
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 
