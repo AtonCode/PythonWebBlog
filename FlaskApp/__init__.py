@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import render_template
 from jinja2 import Template 
+from flask_pymongo import Pymongo
 
 # Constantes Globales 
 app = Flask(__name__)
