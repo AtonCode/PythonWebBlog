@@ -3,6 +3,13 @@ from flask import Flask
 from flask import render_template
 from jinja2 import Template 
 from flask_pymongo import pymongo
+from bson.json_util import dumps
+from bson.objectid import ObjectId
+from flask import jsonify, request
+from werkzeug.security import generate_password_hash,check_password_hash
+
+
+#mongodb://Aton:<password>@py-shard-00-00-ekmaa.mongodb.net:27017,py-shard-00-01-ekmaa.mongodb.net:27017,py-shard-00-02-ekmaa.mongodb.net:27017/test?ssl=true&replicaSet=Py-shard-0&authSource=admin&retryWrites=true&w=majority
 
 # Constantes Globales 
 app = Flask(__name__)
