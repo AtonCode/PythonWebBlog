@@ -20,7 +20,7 @@ mongo=PyMongo(app)
 
 # Rutas Erros 404
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found(error=None):
 
     TitlePage = '| Page Not Found 404'
     MainTitle = { 'content': 'Ups! This Page Not Found 404' }  
@@ -55,7 +55,7 @@ def add_use():
 
         id = mongo.db.user.insert({ "name":_name,"email":_email,"password":_hashed_passwword})
 
-        resp = jsonify("User added!!")
+        resp = jsonify("User added")
 
         resp.status_code = 200
 
