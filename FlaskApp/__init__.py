@@ -45,15 +45,15 @@ def page_not_found(error):
 def add_use():
 
     _json= request.json
-    _name = _json['name']
-    _email = _json['email']
-    _password = _json['password']
+    _name = _json["name"]
+    _email = _json["email"]
+    _password = _json["password"]
  
     if _name and _email and _password and request.method == 'POST':
 
         _hashed_passwword = generate_password_hash(_password)
 
-        id = mongo.db.user.insert({ 'name':_name,'email':_email,'pwd':_hashed_passwword})
+        id = mongo.db.user.insert({ "name":_name,"email":_email,"password":_hashed_passwword})
 
         resp = jsonify("User added!!")
 
