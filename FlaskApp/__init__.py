@@ -2,17 +2,20 @@
 from flask import Flask
 from flask import render_template
 from jinja2 import Template 
-from flask_pymongo import pymongo
+from flask_pymongo import pymongo, PyMongo
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 from flask import jsonify, request
 from werkzeug.security import generate_password_hash,check_password_hash
 
 
-#mongodb://Aton:<password>@py-shard-00-00-ekmaa.mongodb.net:27017,py-shard-00-01-ekmaa.mongodb.net:27017,py-shard-00-02-ekmaa.mongodb.net:27017/test?ssl=true&replicaSet=Py-shard-0&authSource=admin&retryWrites=true&w=majority
-
 # Constantes Globales 
 app = Flask(__name__)
+
+app.secret_key = "secretkey"
+app.config['MONGO_URI'] = "mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/User?retryWrites=true&w=majority"
+mongo=PyMongo(app)
+
 
 
 # Rutas Erros 404
@@ -34,6 +37,31 @@ def page_not_found(error):
     
     ), 404
 # Fin Rutas Erros 404
+
+
+# addUsers
+
+@app.route('/add', methods=['POST'])
+def add_use():
+
+    _json= request.json
+    _name = _json['name']
+    _email = _json['email']
+    _password = _json['password']
+ 
+    if _name and _email and _password and request.method == 'POST':
+
+        _hashed_passwword = generate_password_hash(_password)
+
+        id = mongo.db.user.insert({ 'name':_name,'email':_email,'pwd':_hashed_passwword})
+
+        resp = jsonify("User added!!")
+
+        resp.status_code = 200
+
+        return resp
+    else:
+        return page_not_found()
 
 
 # Rutas Index
@@ -148,4 +176,4 @@ def Tools():
  
  #app.debug= True
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
