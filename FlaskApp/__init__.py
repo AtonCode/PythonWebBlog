@@ -2,7 +2,7 @@
 from flask import Flask
 from flask import render_template
 from jinja2 import Template 
-from flask_pymongo import pymongo, PyMongo
+from flask_pymongo import PyMongo
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 from flask import jsonify, request
@@ -13,7 +13,7 @@ from werkzeug.security import generate_password_hash,check_password_hash
 app = Flask(__name__)
 
 app.secret_key = "secretkey"
-app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"
+app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/Users"
 mongo=PyMongo(app)
 
 
@@ -53,7 +53,7 @@ def add_use():
 
         _hashed_passwword = generate_password_hash(_password)
 
-        id = mongo.db.user.insert({ "name":_name,"email":_email,"password":_hashed_passwword})
+        id = mongo.db.user.insert_one({ "name":_name,"email":_email,"password":_hashed_passwword})
 
         resp = jsonify("User added")
 
