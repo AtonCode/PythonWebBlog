@@ -13,7 +13,7 @@ from werkzeug.security import generate_password_hash,check_password_hash
 app = Flask(__name__)
 
 app.secret_key = "secretkey"
-app.config['MONGO_URI'] = "mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/User?retryWrites=true&w=majority"
+app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"
 mongo=PyMongo(app)
 
 
