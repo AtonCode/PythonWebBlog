@@ -32,8 +32,8 @@ def page_not_found(error):
 @app.route('/')
 def index():
 
-    TitlePage ='| The Sacristan Blog'
-    MainTitle = { 'content': 'Welcome to Sacristan Blog' }  
+    TitlePage ='| The AtonCode Blog'
+    MainTitle = { 'content': 'Welcome to AtonCode Blog' }  
     Titleparagraf ={'content': 'Recommended blogs'}
     ParagrafOne= {'content': 'Blogs '}
    
