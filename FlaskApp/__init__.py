@@ -55,7 +55,7 @@ def add_use():
 
         id = mongo.db.user.insert_one({ "name":_name,"email":_email,"password":_hashed_passwword})
 
-        resp = jsonify("User added")
+        resp = jsonify("name: ",_name,"email: ",_email)
 
         resp.status_code = 200
 
@@ -136,7 +136,7 @@ def Apps():
     TitlePage = '| Apps'
     MainTitle = { 'content': 'Apps' }  
     Titleparagraf ={'content': 'Recommended Apps'}
-    ParagrafOne= {'content': 'Apps'}
+    ParagrafOne= {'content': '2020'}
    
     return render_template(
 

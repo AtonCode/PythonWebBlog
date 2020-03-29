@@ -14,7 +14,17 @@ h1, h2, h3
     
     line-height: 1em;
 }
+h3, h1, h2
+{
+    background-color: rgb(68, 68, 68);
+    padding: 10px;
+    border-radius: 10px;
 
+}
+h4
+{
+    font-family: cursive;
+}
 p
 {
     margin-bottom: 1.0em;
