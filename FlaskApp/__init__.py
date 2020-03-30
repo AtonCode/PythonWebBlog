@@ -13,9 +13,9 @@ from werkzeug.security import generate_password_hash,check_password_hash
 app = Flask(__name__)
 
 app.secret_key = "secretkey"
-app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/Users"
+app.config['MONGO_URI'] ="mongodb://127.0.0.1:27017/Users"
 mongo=PyMongo(app)
-
+#"mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/Users"
 
 
 # Rutas Erros 404
