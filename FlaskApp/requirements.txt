@@ -5,7 +5,7 @@ Jinja2==2.10
 MarkupSafe==1.1.1
 Markup==0.2
 escape==1.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 bcrypt==3.1.4
 blinker==1.4
 certifi==2016.2.28
