@@ -53,7 +53,7 @@ def add_use():
 
         _hashed_passwword = generate_password_hash(_password)
 
-        id = mongo.db.user.insert_one({ "name":_name,"email":_email,"password":_hashed_passwword})
+        id = mongo.db.user.insert({ "name":_name,"email":_email,"password":_hashed_passwword})
 
         resp = jsonify("name: ",_name,"email: ",_email)
 
@@ -62,6 +62,31 @@ def add_use():
         return resp
     else:
         return page_not_found()
+
+@app.route('/users')
+def users():
+
+    users = mongo.db.user.find()
+    resp = dumps(users)
+    return resp
+@app.route('/users/<id>')
+def user(id):
+
+    user = mongo.db.user.find_one({"_id":ObjectId(id)})
+    resp = dumps(user)
+    return resp
+
+@app.route('/delete/<id>', methods=['DELETE'])
+def delate_user(id):
+
+    mongo.db.user.delete_one({"_id":ObjectId(id)})
+    resp = jsonify("User Delate")
+    resp.status_code = 200
+    return resp
+
+
+
+
 
 
 # Rutas Index
