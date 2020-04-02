@@ -1,4 +1,8 @@
 # Libreias
+import os
+from flask import send_from_directory
+from flask import Flask, flash, request, redirect, url_for
+from werkzeug.utils import secure_filename
 from flask import Flask
 from flask import render_template
 from jinja2 import Template 
@@ -8,14 +12,63 @@ from bson.objectid import ObjectId
 from flask import jsonify, request
 from werkzeug.security import generate_password_hash,check_password_hash
 
-
+UPLOAD_FOLDER = './uploads'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4'}
 # Constantes Globales 
 app = Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.secret_key = "secretkey"
 app.config['MONGO_URI'] ="mongodb://127.0.0.1:27017/Users"
 mongo=PyMongo(app)
 #"mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/Users"
+
+
+
+#Ruta de upload new files
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/up', methods=['GET', 'POST'])
+def upload_file():
+
+    TitlePage = '| Upload New Files'
+    MainTitle = { 'content': 'Upload New Files' }  
+    Titleparagraf ={'content': 'Upload New Files'}
+    ParagrafOne= {'content': '2020'}
+
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('uploaded_file',
+                                    filename=filename))
+    return render_template(
+        'transfer.html',
+         TitlePage= TitlePage,
+         MainTitle= MainTitle ,
+         Titleparagraf=Titleparagraf,
+         ParagrafOne= ParagrafOne
+        )
+
+#filename = "../../../../home/username/.bashrc"
+
+#Visualizacion de lo cargado
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'],filename)
 
 
 # Rutas Erros 404
