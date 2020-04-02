@@ -12,7 +12,7 @@ from bson.objectid import ObjectId
 from flask import jsonify, request
 from werkzeug.security import generate_password_hash,check_password_hash
 
-UPLOAD_FOLDER = '/uploads'
+UPLOAD_FOLDER = '/var/www/FlaskApp/FlaskApp/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4'}
 # Constantes Globales 
 app = Flask(__name__)
