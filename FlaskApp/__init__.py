@@ -12,7 +12,7 @@ from bson.objectid import ObjectId
 from flask import jsonify, request
 from werkzeug.security import generate_password_hash,check_password_hash
 
-UPLOAD_FOLDER = './uploads'
+UPLOAD_FOLDER = '/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4'}
 # Constantes Globales 
 app = Flask(__name__)
@@ -23,6 +23,7 @@ app.secret_key = "secretkey"
 app.config['MONGO_URI'] ="mongodb://127.0.0.1:27017/Users"
 mongo=PyMongo(app)
 #"mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/Users"
+
 
 
 #Ruta de upload new files
