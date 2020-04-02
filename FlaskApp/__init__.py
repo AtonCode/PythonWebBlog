@@ -25,7 +25,6 @@ mongo=PyMongo(app)
 #"mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/Users"
 
 
-
 #Ruta de upload new files
 def allowed_file(filename):
     return '.' in filename and \
