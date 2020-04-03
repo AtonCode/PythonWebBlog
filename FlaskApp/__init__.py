@@ -12,12 +12,13 @@ from bson.objectid import ObjectId
 from flask import jsonify, request
 from werkzeug.security import generate_password_hash,check_password_hash
 
-UPLOAD_FOLDER = '/var/www/FlaskApp/FlaskApp/uploads'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4'}
-# Constantes Globales 
 app = Flask(__name__)
 
+# Constantes Globales 
+UPLOAD_FOLDER = '/UPLOAD_FOLDER/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4','mov'}
+
 
 app.secret_key = "secretkey"
 app.config['MONGO_URI'] ="mongodb://127.0.0.1:27017/Users"
@@ -25,15 +26,15 @@ mongo=PyMongo(app)
 #"mongodb+srv://Aton:chaman99@py-ekmaa.mongodb.net/Users"
 
 
-
 #Ruta de upload new files
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/up', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
 
+    
     TitlePage = '| Upload New Files'
     MainTitle = { 'content': 'Upload New Files' }  
     Titleparagraf ={'content': 'Upload New Files'}
@@ -53,9 +54,10 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+            return redirect(url_for('uploaded_file',filename=filename))
+
     return render_template(
+
         'transfer.html',
          TitlePage= TitlePage,
          MainTitle= MainTitle ,
@@ -63,12 +65,14 @@ def upload_file():
          ParagrafOne= ParagrafOne
         )
 
-#filename = "../../../../home/username/.bashrc"
+filename = "../../../../home/username/.bashrc"
 
 #Visualizacion de lo cargado
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],filename)
+
+   
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
 # Rutas Erros 404
