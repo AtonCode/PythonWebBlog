@@ -12,13 +12,13 @@ from bson.objectid import ObjectId
 from flask import jsonify, request
 from werkzeug.security import generate_password_hash,check_password_hash
 
+UPLOAD_FOLDER = ' ./UPLOAD_FOLDER/'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4','mov'}
 app = Flask(__name__)
 
 # Constantes Globales 
-UPLOAD_FOLDER = '/UPLOAD_FOLDER/'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','mp3','mp4','mov'}
 
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.secret_key = "secretkey"
 app.config['MONGO_URI'] ="mongodb://127.0.0.1:27017/Users"
@@ -65,7 +65,7 @@ def upload_file():
          ParagrafOne= ParagrafOne
         )
 
-filename = "../../../../home/username/.bashrc"
+
 
 #Visualizacion de lo cargado
 @app.route('/uploads/<filename>')
